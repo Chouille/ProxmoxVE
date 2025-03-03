@@ -19,7 +19,7 @@ $STD apt-get install -y \
   mc \
   postgresql \
   apache2 \
-  php-{curl,dom,json,ctype,pgsql,gmp,mbstring,iconv,zip} \
+  php-{curl,dom,json,ctype,mysql,pgsql,gmp,mbstring,iconv,zip} \
   libapache2-mod-php
 msg_ok "Installed Dependencies"
 
