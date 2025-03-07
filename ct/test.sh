@@ -30,7 +30,7 @@ check_container_resources
   fi
   
   if [[ ! -f /opt/${APP}_version.txt ]] || [[ "${RELEASE}" != "$(cat /opt/${APP}_version.txt)" ]]; then
-    
+    echo "Stopping Apache2"
   exit
 }
 

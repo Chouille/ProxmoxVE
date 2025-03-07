@@ -29,6 +29,7 @@ msg_info "Setting up database"
 if [ "$UPD" == "1" ]; then
     echo "Local Server"
 fi
+
 if [ "$UPD" == "2" ]; then
     echo "Remote Server"
 fi
