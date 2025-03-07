@@ -21,18 +21,14 @@ $STD apt-get install -y \
 msg_ok "Installed Dependencies"
 
 msg_info "Setting up database"
-  UPD=$(whiptail --backtitle "Proxmox VE Helper Scripts" --title "Choose DB option" --radiolist --cancel-button Exit-Script "Spacebar = Select" 11 58 3 \
-    "1" "Local Server" ON \
-    "2" "Remote Server" OFF \
-    3>&1 1>&2 2>&3)
-
-if [ "$UPD" == "1" ]; then
-    echo "Local Server"
+read -r -p "Would you like to install local db server? <y/N> " prompt
+if [[ "${prompt,,}" =~ ^(y|yes)$ ]]; then
+  msg_info "Installing Adminer"
+ 
+  msg_ok "Installed db server"
 fi
 
-if [ "$UPD" == "2" ]; then
-    echo "Remote Server"
-fi
+
 DB_NAME=firefly
 DB_USER=firefly
 DB_PASS=$(openssl rand -base64 18 | tr -dc 'a-zA-Z0-9' | head -c13)
