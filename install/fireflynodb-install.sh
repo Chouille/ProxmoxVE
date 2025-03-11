@@ -25,7 +25,6 @@ $STD apt-get install -y \
     apache2 \
     libapache2-mod-php8.4 \
     php8.4-{bcmath,cli,intl,curl,zip,gd,xml,mbstring,mysql} \
-    mariadb-server \
     composer
 msg_ok "Installed Dependencies"
 
